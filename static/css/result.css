@@ -1,0 +1,297 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f8f7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.outer-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 900px;
+  width: 100%;
+  padding: 35px 45px;
+  border: 2px solid #6c63ff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(108, 99, 255, 0.25);
+  background: white;
+  height: 610px;
+}
+
+.left-panel {
+  flex: 0 0 55%;
+  padding-left: 25px;
+}
+
+.greeting {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+#para {
+  font-size: 16px;
+}
+
+.career {
+  font-size: 46px;
+  color: #6c63ff;
+  margin: 10px 0;
+  transition: 0.3s ease;
+}
+
+.career:hover {
+  transform: scale(1.05);
+}
+
+.confidence {
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.confidence span {
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.career-description {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  max-width: 420px;
+}
+
+.career-description h3 {
+  margin-bottom: 6px;
+  font-size: 17px;
+}
+
+.career-suggestion {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #333;
+  background: #f3f2ff;
+  padding: 10px 14px;
+  border-left: 4px solid #6c63ff;
+  border-radius: 8px;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+.career-suggestion h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.details {
+  margin-top: 14px;
+}
+
+.details p {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+.details strong {
+  color: #6c63ff;
+}
+
+.buttons {
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 12px;
+  transition: 0.3s ease;
+}
+
+.primary {
+  background: #6c63ff;
+  color: white;
+}
+
+.primary:hover {
+  background: #5a52e0;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(108, 99, 255, 0.45);
+}
+
+.secondary {
+  background: #f3961c;
+  color: white;
+}
+
+.secondary:hover {
+  background: #e67e00;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(243, 150, 28, 0.45);
+}
+
+.right-panel {
+  flex: 0 0 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-container {
+  width: 320px;
+  height: 320px;
+  position: relative;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  transition: 0.3s ease;
+}
+
+canvas:hover {
+  transform: scale(1.05);
+}
+
+.spinner {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: 7px solid #eee;
+  border-top: 7px solid #6c63ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .left-panel, .right-panel {
+    flex: 100%;
+    padding-left: 0;
+    margin: 0;
+  }
+  .chart-container {
+    width: 300px;
+    height: 300px;
+    margin-top: 10px;
+  }
+
+  .career-description, .career-suggestion {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 92%;
+    padding: 25px 18px;
+  }
+
+  .greeting {
+    font-size: 22px;
+  }
+
+  .career {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .confidence {
+    font-size: 18px;
+
+  }
+
+  .career-description {
+    font-size: 14px;
+
+  }
+
+  .career-suggestion {
+    font-size: 14px;
+    padding: 10px 12px;
+
+  }
+
+  .chart-container {
+    width: 240px;
+    height: 240px;
+
+  }
+
+  .details p {
+    font-size: 15px;
+
+  }
+
+}
+
+@media (max-width: 400px) {
+  .career {
+    font-size: 26px;
+  }
+
+  .chart-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+}
+
+.home {
+  background: #d32f2f;
+  color: white;
+}
+
+.home:hover {
+  background: #d53434;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(44, 11, 91, 0.45);
+}

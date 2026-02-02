@@ -1,0 +1,263 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle at 20% 20%, #ffffff80, transparent 40%),
+        radial-gradient(circle at 80% 80%, #d7ccff70, transparent 40%),
+        linear-gradient(135deg, #faf4f5 0%, #f3edff 50%, #ece4ff 100%);
+}
+
+
+.result-box2 {
+    width: 60%;
+    max-width: 800px;
+    padding: 65px 75px;
+    text-align: center;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(108, 99, 255, 0.35);
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.12),
+        0 0 30px rgba(108, 99, 255, 0.15);
+    transition: all 0.4s ease;
+}
+
+.result-box2:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.15),
+        0 0 50px rgba(108, 99, 255, 0.25);
+}
+
+.result-box2 h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2c0b5b;
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.result-box2 h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    margin: 10px auto 0;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #5b2bd8, #8a6cff);
+}
+
+.career-title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    background: linear-gradient(135deg, #2c0b5b, #5b2bd8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.result-box2 p:hover {
+    transform: scale(1.05);
+    text-shadow:
+        0 0 12px rgba(91, 43, 216, 0.35),
+        0 0 25px rgba(108, 99, 255, 0.25);
+}
+
+.result-box2 button {
+    position: relative;
+    overflow: hidden;
+    padding: 14px 35px;
+    margin: 8px 10px;
+    border-radius: 35px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.result-box2 a:first-of-type button {
+    background: linear-gradient(135deg, #2c0b5b, #5b2bd8);
+    color: white;
+}
+
+.result-box2 a:last-of-type button {
+    background: linear-gradient(135deg, #f3961c, #ffb347);
+    color: white;
+}
+
+.result-box2 button:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(108, 99, 255, 0.35);
+}
+
+.result-box2 button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.6),
+            rgba(255, 255, 255, 0.2));
+    transform: skewX(-25deg);
+    transition: 0.6s;
+}
+
+.result-box2 button:hover::before {
+    left: 130%;
+}
+
+.result-box2 button:active {
+    transform: scale(0.96);
+}
+
+.career-desc {
+    font-size: 16px;
+    color: #444;
+    max-width: 600px;
+    margin: 0 auto 15px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.career-suggestion {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.career-suggestion h3 {
+    font-size: 18px;
+    color: #2c0b5b;
+    margin-bottom: 8px;
+}
+
+.career-suggestion p {
+    font-size: 15px;
+    font-weight: 400;
+    background: none;
+    -webkit-text-fill-color: #555;
+    color: #555;
+    line-height: 1.6;
+}
+
+.courses {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.course-btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: rgba(108, 99, 255, 0.12);
+    border: 1px solid rgba(108, 99, 255, 0.35);
+    color: #5b2bd8;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.course-btn:hover {
+    background: #5b2bd8;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(108, 99, 255, 0.35);
+}
+
+@media (max-width:1024px) {
+    .result-box2 {
+        width: 85%;
+        padding: 50px 40px;
+    }
+    .career-title {
+        font-size: 34px;
+    }
+}
+
+@media (max-width:768px) {
+    .result-box2 {
+        width: 92%;
+        padding: 40px 30px;
+    }
+    .result-box2 h2 {
+        font-size: 24px;
+    }
+    .career-title {
+        font-size: 30px;
+    }
+    .career-desc {
+        font-size: 15px;
+    }
+    .career-suggestion p {
+        font-size: 14px;
+    }
+    .courses {
+        gap: 10px;
+    }
+}
+
+@media (max-width:480px) {
+    body {
+        padding: 20px 10px;
+    }
+    .result-box2 {
+        width: 95%;
+        padding: 30px 20px;
+        border-radius: 18px;
+    }
+    .result-box2 h2 {
+        font-size: 22px;
+    }
+    .career-title {
+        font-size: 26px;
+    }
+    .career-desc {
+        font-size: 14px;
+    }
+    .career-suggestion h3 {
+        font-size: 16px;
+
+    }
+    .career-suggestion p {
+        font-size: 13px;
+
+    }
+    .result-box2 button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .course-btn {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width:350px) {
+    .result-box2 {
+        padding: 25px 15px;
+
+    }
+    .career-title {
+        font-size: 22px;
+    }
+
+    .result-box2 button {
+        padding: 8px 16px;
+        font-size: 13px;
+
+    }
+}

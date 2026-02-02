@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Guidance System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mainFile.css') }}"/>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <nav class="navbar section-content">
+        <a href="#" class="nav-logo">
+          <h2 class="logo-text">📖 CareerGuidance</h2>
+        </a>
+        <ul class="nav-menu">
+          <button id="menu-close-button" class="fas fa-times"></button>
+
+          <li class="nav-item">
+            <a href="#home" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#service" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            {% if session.get('user_id') %}
+            <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+            {% else %}
+            <a href="#login" class="nav-link">Log in</a>
+            {% endif %}
+          </li>
+        </ul>
+
+        <button id="menu-open-button" class="fas fa-bars"></button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- hero section -->
+      <section class="hero-section" id="home">
+        <div class="section-content">
+          <div class="hero-details">
+            <h2 class="title">Career Guidance Syetem</h2>
+            <h3 class="subtitle">
+              Make your future great with our career guidance
+            </h3>
+            <p class="description">
+              Welcome to the career Guidance System -your personalised companion
+              for discovering the right career path
+            </p>
+            <div class="buttons">
+              <a href="{{ url_for('signup') }}" class="button started-now"
+                >Get Started</a
+              >
+              <a href="#contact" class="button contact-us">Contact Us</a>
+            </div>
+          </div>
+          <div class="hero-imag-wrapper">
+            <img
+              src="{{url_for('static', filename='images/background .png')}}"
+              alt="Hero"
+              class="hero-image"
+            />
+          </div>
+        </div>
+      </section>
+
+     <section class="about-section" id="about">
+        <div class="section-content">
+                <div class="about-image-wrapper">
+                    <img src="{{url_for('static', filename='images/kittuavatar.png')}}" alt="About" class="about-image">
+                </div>
+                <div class="about-details">
+                    <h2 class="section-title">About Us</h2>
+                    <p class="text">
+                      Career Guidance System is an intelligent platform designed to help
+                      students discover suitable career paths using machine learning. 
+                      The system analyzes key factors such as academic performance, technical 
+                      skills and personal interests to generate personalized career predictions. 
+                      By using data-driven insights, the platform helps students understand their 
+                      strengths and explore career opportunities that align with their abilities. 
+                      In addition to prediction, it also provides skill analysis and guidance to support 
+                      better career planning. The goal of this platform is to simplify the career decision-making 
+                      process and help students choose a path that matches their potential. Through the use of modern 
+                      technologies and intelligent analysis, the system aims to guide students toward more 
+                      confident and informed career choices.
+                    </p>
+                     <div class="social-link-list">
+                        <a href="https://www.linkedin.com/in/kiran-devi-8413aa307?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BTcCElVHPQWiZvas7iCLvzA%3D%3D" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/kir.an4400/" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/KiranKittu17236" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+                     </div>
+                </div>
+            </div>
+        
+        <div class="features-section">
+          <h3>Key Features</h3>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <h4>ML Prediction</h4>
+              <p>Predict suitable career paths using machine learning.</p>
+            </div>
+
+            <div class="feature-card">
+              <h4>Skill Analysis</h4>
+              <p>Discover careers based on your technical skills.</p>
+            </div>
+
+            <div class="feature-card">
+              <h4>Career Suggestions</h4>
+              <p>Get personalized career guidance and recommendations.</p>
+            </div>
+
+            <div class="feature-card">
+              <h4>Course Guidance</h4>
+              <p>Explore courses to enhance your career opportunities.</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="tech-section">
+          <h3>Technology Stack</h3>
+          <p class="tech-stack">
+            Python • Flask • Machine Learning • MySQL • HTML • CSS • JavaScript
+          </p>
+        </div>
+      
+        <div class="mission-section">
+          <h3>Our Mission</h3>
+          <p>
+            Our mission is to help students make informed career decisions using
+            data-driven insights and modern machine learning technologies.
+          </p>
+        </div>
+      </section>
+
+      <!-- Services section -->
+      <section class="services-section" id="service">
+        <div class="services-content">
+          <h1 class="font-color">Our Services</h1>
+          <p class="subtitle">
+            Empowering your future with personalized career tools
+          </p>
+
+          <div class="service-card">
+            <h2>🔮 Career Prediction</h2>
+            <p>
+              Get tailored career suggestions based on your interests, skills,
+              and goals.
+            </p>
+            <a href="{{ url_for('predict') }}">
+              <button>Explore Prediction</button>
+            </a>
+          </div>
+
+          <div class="service-card">
+            <h2>🧠 Discover Yourself</h2>
+            <p>
+              Take self-assessment tests to uncover your strengths and
+              personality traits.
+            </p>
+            <a href="{{ url_for('discover') }}">
+              <button>Find yourself</button>
+            </a>
+          </div>
+
+          <div class="service-card">
+            <h2>📚 Courses / Details</h2>
+            <p>
+              Explore a curated list of courses and detailed career paths to
+              enhance your learning.
+            </p>
+            <a href="{{ url_for('courses') }}">
+              <button>View Courses</button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="section-content">
+          <ul class="contact-info-list">
+            <li class="contact-info">
+              <i class="fa-solid fa-location-crosshairs"></i>
+              <p>U-488 Prem nagar 2nd, 40 Feet Road, Kirari suleman nagar</p>
+            </li>
+            <li class="contact-info">
+              <i class="fa-regular fa-envelope"></i>
+              <p>kittukiran496@gmail.com</p>
+            </li>
+            <li class="contact-info">
+              <i class="fa-brands fa-linkedin"></i>
+              <p>
+                <a href="https://www.linkedin.com/in/kiran-devi-8413aa307/"
+                  target="_blank"
+                  id="social">
+                  linkedin.com/in/your-kiran-devi-8413aa307
+                </a>
+              </p>
+            </li>
+            <li class="contact-info">
+              <i class="fa-brands fa-github"></i>
+              <p>
+                <a href="https://github.com/Kiran680-dev" target="_blank" id="social">
+                  github.com/Kiran680-dev
+                </a>
+              </p>
+            </li>
+          </ul>
+
+          <form method="POST" action="{{ url_for('contact') }}" class="contact-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+            <input type="text" placeholder="Your name" name="name" class="form-input" required/>
+            <input type="email" placeholder="Your email" name="email" class="form-input" required/>
+            <textarea placeholder="Your message" class="form-input" name="message" required></textarea>
+            <button class="submit-button">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Login section -->
+      <section class="login-section" id="login">
+        <div class="cg-login-wrapper">
+          <div class="cg-login-card">
+            <h2 class="heading-font">Welcome Back !</h2>
+            <p class="fonts">
+              Log in to access your personalized dashboard and continue your
+              journey.<br />
+              We're glad to see you again!
+            </p>
+            <a href="{{ url_for('login') }}">
+              <button class="cg-login-btn">Log In</button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer section -->
+      <footer class="footer">
+        <div id="cookie-banner" class="cookie-banner">
+          <div class="cookie-content">
+            <p>
+              We use cookies and session storage to improve your experience. By
+              clicking "Accept All", you agree to our Privacy Policy.
+            </p>
+            <button id="accept-cookies">Accept All Cookies</button>
+          </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+          <a href="https://www.instagram.com/kir.an4400/"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/kiran-devi-8413aa307?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BTcCElVHPQWiZvas7iCLvzA%3D%3D"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="https://x.com/KiranKittu17236"
+            ><i class="fab fa-x-twitter"></i
+          ></a>
+          <a href="https://in.pinterest.com/kittukiran496/_profile/"
+            ><i class="fab fa-pinterest-p"></i
+          ></a>
+          <a href="https://github.com/Kiran680-dev"
+            ><i class="fab fa-github"></i
+          ></a>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#service">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#login">Login</a></li>
+        </ul>
+
+        <!-- Bottom Text -->
+        <div class="footer-bottom">
+          <p>@Career Guidance</p>
+          <a href="{{url_for('privacy')}}">Privacy Policies</a>
+        </div>
+      </footer>
+    </main>
+
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Result</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="left-panel">
+        <h2 class="greeting">Hello {{ name }}</h2>
+        <p id="para">Your prediction career is :</p>
+        <h1 class="career">{{ career }}</h1>
+        <div class="confidence">
+            Confidence score: <span>{{ confidence }}%</span>
+        </div>
+
+        <div class="career-description">
+            <h3>About This Career</h3>
+            <p>{{ description }}</p>
+        </div>
+        <div class="career-suggestion">
+            <h3>Suggestion</h3>
+            <p>{{ suggestion }}</p>
+        </div>
+
+        <div class="details">
+            <p><strong>Education Level:</strong> {{ education_level }}</p>
+            <p><strong>Stream:</strong> {{ stream }}</p>
+            <p><strong>CGPA:</strong> {{ cgpa }}</p>
+        </div>
+
+        <div class="buttons">
+            <a href="/prediction" class="btn primary">Try Again</a>
+            <a href="{{ url_for('feedback') }}" class="btn secondary">Feedback</a>
+            <a href="{{ url_for('home') }}" class="btn home">Back to Home</a>
+        </div>
+    </div>
+
+    <div class="right-panel">
+        <div class="chart-container">
+            <div class="spinner" id="spinner"></div>
+            <canvas id="confidenceChart"></canvas>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const confidenceValue = "{{ confidence }}";
+</script>
+<script src="{{ url_for('static', filename='js/result.js') }}"></script>
+
+</body>
+</html>

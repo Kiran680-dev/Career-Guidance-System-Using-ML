@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Discover Yourself</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/discover.css') }}">
+</head>
+
+<body>
+<div class="container">
+  <div class="left">
+    <img src="{{ url_for('static', filename='images/AnimatedGirl.png') }}" 
+         alt="Career Growth" class="animated-img">
+  </div>
+
+  <div class="right">
+    <div class="discover-box">
+      <h1>Discover Yourself</h1>
+      <p>Enter your top skills and we'll suggest the best career path for you</p>
+
+      <form action="/discover_predict" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="text" name="skill1" placeholder="Enter Skill 1" required>
+        <input type="text" name="skill2" placeholder="Enter Skill 2">
+        <input type="text" name="skill3" placeholder="Enter Skill 3">
+        <input type="text" name="skill4" placeholder="Enter Skill 4">
+        <input type="text" name="skill5" placeholder="Enter Skill 5">
+
+        <button type="submit">Find My Career</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

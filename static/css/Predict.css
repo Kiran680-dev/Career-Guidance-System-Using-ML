@@ -1,0 +1,103 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+
+body {
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(135deg,#7b2cbf 60%, #5a189a 100%);
+}
+
+.career-section {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 40px;
+}
+
+.career-box {
+   width: 430px;
+   text-align: center;
+   animation: fadeIn 1s ease;
+}
+
+.career-box h2 {
+   color: white;
+   font-size: 34px;
+   margin-bottom: 35px;
+   letter-spacing: 1px;
+}
+
+form input, form select {
+   width: 100%;
+   padding: 14px 16px;
+   margin-bottom: 18px;
+   border: none;
+   border-radius: 8px;
+   background: white;
+   font-size: 15px;
+   outline: none;
+   transition: all 0.3s ease;
+}
+
+input::placeholder {
+   color: #777;
+}
+
+form input:hover, form select:hover {
+   transform: scale(1.02);
+   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+form input:focus, form select:focus {
+   transform: scale(1.02);
+   border: 2px solid #9d4edd;
+   box-shadow: 0 0 12px rgba(157, 78, 221, 0.6);
+}
+
+button {
+   width: 100%;
+   padding: 14px;
+   border: none;
+   border-radius: 8px;
+   background: linear-gradient(45deg, #ff8c00, #ffb703);
+   color: white;
+   font-size: 16px;
+   font-weight: 500;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+button:hover {
+   transform: translateY(-3px) scale(1.02);
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+   background: linear-gradient(45deg, #ff9f1c, #ffc300);
+}
+
+button:active {
+   transform: scale(0.97);
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: translateY(25px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+@media(max-width:500px) {
+   .career-box {
+      width: 90%;
+   }
+}

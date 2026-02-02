@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback Received</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/success.css') }}">
+</head>
+<body>
+  <div class="success-wrapper">
+    <div class="glow"></div>
+    <div class="card">
+      <h1 class="headline">Thank you for your feedback 😊</h1>
+      <p class="subtext">
+        Your voice helps us shape a better experience—every insight you share guides us to improve with care and clarity.
+      </p>
+      <a href="{{ url_for('prediction') }}" class="btn">Back to Prediction</a>
+      <a href="{{ url_for('home') }}" class="btn"> Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

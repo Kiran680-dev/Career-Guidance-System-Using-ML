@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/admin.css') }}"
+    />
+  </head>
+  <body>
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <div class="container">
+      <div class="sidebar" id="sidebar">
+        <h2 class="logo">Admin</h2>
+        <ul>
+          <li><a href="#users">Users</a></li>
+          <li><a href="#feedback">Feedback</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="#predictions">Predictions</a></li>
+          <li><a href="#skill_predictions">Skill Predictions</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#course_views">Course Analytics</a></li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <h1 class="title">Admin Dashboard</h1>
+        <div class="card" id="users">
+          <h2>Users</h2>
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+            </tr>
+
+            {% for user in users %}
+
+            <tr>
+              <td>{{user.id}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.role}}</td>
+            </tr>
+
+            {% endfor %}
+          </table>
+        </div>
+
+        <!-- Feedback -->
+        <div class="card" id="feedback">
+          <h2>Feedback</h2>
+          {% for f in feedbacks %}
+          <div class="feedback-box">
+            <p><strong>Rating:</strong> {{f.rating}}</p>
+            <p>{{f.message}}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Contact -->
+        <div class="card" id="contacts">
+          <h2>Contact Messages</h2>
+
+          {% for c in contacts %}
+
+          <div class="contact-box">
+            <p><strong>Name:</strong> {{c.name}}</p>
+            <p><strong>Email:</strong> {{c.email}}</p>
+            <p><strong>Message:</strong> {{c.message}}</p>
+          </div>
+
+          {% endfor %}
+        </div>
+
+        <!-- Prediction -->
+        <div class="card" id="predictions">
+          <h2>Career Predictions</h2>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Education</th>
+              <th>Stream</th>
+              <th>Career</th>
+            </tr>
+
+            {% for p in predictions %}
+
+            <tr>
+              <td>{{p.name}}</td>
+              <td>{{p.education_level}}</td>
+              <td>{{p.stream}}</td>
+              <td>{{p.predicted_career}}</td>
+            </tr>
+
+            {% endfor %}
+          </table>
+        </div>
+
+        <!-- skill prediction  -->
+        <div class="card" id="skill_predictions">
+          <h2>Skill Based Predictions</h2>
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Skills</th>
+              <th>Predicted Career</th>
+            </tr>
+
+            {% for s in skill_predictions %}
+
+            <tr>
+              <td>{{s.id}}</td>
+              <td>{{s.skills}}</td>
+              <td>{{s.predicted_career}}</td>
+            </tr>
+
+            {% endfor %}
+          </table>
+        </div>
+
+        <div class="card" id="courses">
+          <h2>Courses</h2>
+          <h3>Add New Course</h3>
+          <form action="{{ url_for('add_course') }}" method="POST" class="add-course-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+            <input type="text" name="course_name" placeholder="Course Name" required />
+            <input type="text" name="description" placeholder="Short Description" required/>
+            <button type="submit">Add Course</button>
+          </form>
+
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Course Name</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+
+            {% for c in courses %}
+
+            <tr>
+              <td>{{c.id}}</td>
+              <td>{{c.course_name}}</td>
+              <td>{{c.short_description}}</td>
+              <td>
+                <a href="{{ url_for('delete_course', id=c.id) }}" onclick="return confirm('Delete this course?')"> Delete </a>
+              </td>
+            </tr>
+
+            {% endfor %}
+          </table>
+        </div>
+
+        <div class="card" id="course_views">
+          <h2>Course Analytics</h2>
+          <table>
+            <tr>
+              <th>Course</th>
+              <th>Total Views</th>
+            </tr>
+
+            {% for v in course_analytics %}
+
+            <tr>
+              <td>{{v.course_name}}</td>
+              <td>{{v.total_views}}</td>
+            </tr>
+
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="{{url_for('static', filename='js/admin.js')}}"></script>
+  </body>
+</html>

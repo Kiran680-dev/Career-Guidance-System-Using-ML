@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses & Details</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/course&details.css') }}">
+</head>
+<body>
+  <section class="courses-section">
+    <h1>Courses & Details</h1>
+    <div class="courses-container">
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/C++.jpg') }}" alt="C++">
+        <h3>C++</h3>
+        <a href="{{ url_for('course_page', name='C++') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/Python.jpg') }}" alt="Python">
+        <h3>Python</h3>
+        <a href="{{ url_for('course_page', name='Python') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/java.jpg') }}" alt="Java">
+        <h3>Java</h3>
+        <a href="{{ url_for('course_page', name='java') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{url_for('static', filename='images/C.jpg')}}" alt="C Language">
+        <h3>C Language</h3>
+        <a href="{{ url_for('course_page', name='C') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/C#.jpg') }}" alt="C#">
+        <h3>C#</h3>
+        <a href="{{ url_for('course_page', name='CSharp') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/mysql.jpg') }}" alt="MySQL">
+        <h3>MySQL</h3>
+        <a href="{{ url_for('course_page', name='MySQL') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/htm_css_js.jpg') }}" alt="html/CSS/JS">
+        <h3>html/CSS/JS</h3>
+        <a href="{{ url_for('course_page', name='html_css_js') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/Bootstrap.png') }}" alt="Bootsrap">
+        <h3>Bootsrap</h3>
+        <a href="{{ url_for('course_page', name='bootstrap') }}">More →</a>
+      </div>
+      
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/React.jpg') }}" alt="React">
+        <h3>React</h3>
+        <a href="{{ url_for('course_page', name='react') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/Julia.jpg') }}" alt="Julia">
+        <h3>Julia</h3>
+        <a href="{{ url_for('course_page', name='julia') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/MongoDB.png') }}" alt="MongoDB">
+        <h3>MongoDB</h3>
+        <a href="{{ url_for('course_page', name='MongoDB') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/type script.jpg') }}" alt="TypeScript">
+        <h3>TypeScript</h3>
+        <a href="{{ url_for('course_page', name='typescript') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/kotlin.jpg') }}" alt="Kotlin">
+        <h3>Kotlin</h3>
+        <a href="{{ url_for('course_page', name='kotlin') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/node js.jpg') }}" alt="Node.js">
+        <h3>Node.js</h3>
+        <a href="{{ url_for('course_page', name='nodeJS') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/Ruby.jpg') }}" alt="Ruby">
+        <h3>Ruby</h3>
+        <a href="{{ url_for('course_page', name='ruby') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/Swift.jpg') }}" alt="Swift">
+        <h3>Swift</h3>
+        <a href="{{ url_for('course_page', name='swift') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/Angulor.jpg') }}" alt="Angulor">
+        <h3>Angular</h3>
+        <a href="{{ url_for('course_page', name='Angulor') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/PHP.jpg') }}" alt="PHP">
+        <h3>PHP</h3>
+        <a href="{{ url_for('course_page', name='PHP') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/perl.png') }}" alt="Perl">
+        <h3>Perl</h3>
+        <a href="{{ url_for('course_page', name='perl') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/matlab.jpg') }}" alt="matlab">
+        <h3>MATLAB</h3>
+        <a href="{{ url_for('course_page', name='matlab') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/linux.jpg') }}" alt="linux">
+        <h3>Linux</h3>
+        <a href="{{ url_for('course_page', name='linux') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/postgresql.jpg') }}" alt="PostgreSQL">
+        <h3>PostgreSQL</h3>
+        <a href="{{ url_for('course_page', name='postgresql') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/rust.jpg') }}" alt="Rust">
+        <h3>Rust</h3>
+        <a href="{{ url_for('course_page', name='rust') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/docker.jpg') }}" alt="Docker">
+        <h3>Docker</h3>
+        <a href="{{ url_for('course_page', name='docker') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/Lisp.jpg') }}" alt="Lisp">
+        <h3>Lisp</h3>
+        <a href="{{ url_for('course_page', name='lisp') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/r.jpg') }}" alt="R">
+        <h3>R</h3>
+        <a href="{{ url_for('course_page', name='r') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/Gol.jpg') }}" alt="Go">
+        <h3>Go</h3>
+        <a href="{{ url_for('course_page', name='go') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/dart.jpg') }}" alt="dart">
+        <h3>Dart & Flutter</h3>
+        <a href="{{ url_for('course_page', name='dart_flutter') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/assembly.jpg') }}" alt="Assembly">
+        <h3>Assembly Language</h3>
+        <a href="{{ url_for('course_page', name='assembly') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/scala.jpg') }}" alt="Scala">
+        <h3>Scala</h3>
+        <a href="{{ url_for('course_page', name='scala') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/Flask.jpg') }}" alt="Flask">
+        <h3>Flask</h3>
+        <a href="{{ url_for('course_page', name='flask') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/prolog.webp') }}" alt="prolog">
+        <h3>Prolog</h3>
+        <a href="{{ url_for('course_page', name='prolog') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/scikit.jpg') }}" alt="scikit">
+        <h3>Scikit-Learn</h3>
+        <a href="{{ url_for('course_page', name='scikit_learn') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/django.jpg') }}" alt="django">
+        <h3>Django</h3>
+        <a href="{{ url_for('course_page', name='django') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/pandas.jpg') }}" alt="pandas">
+        <h3>Pandas</h3>
+        <a href="{{ url_for('course_page', name='pandas') }}">More →</a>
+      </div>
+
+      <div class="course-card">
+        <img src="{{ url_for('static', filename='images/bash.jpg') }}" alt="bash">
+        <h3>Bash</h3>
+        <a href="{{ url_for('course_page', name='bash') }}">More →</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

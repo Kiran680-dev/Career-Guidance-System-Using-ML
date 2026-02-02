@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}">
+</head>
+<body>
+<div class="feedback-popup">
+  <div class="feedback-card">
+    <h2>We appreciate your feedback</h2>
+    <form method="POST">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="stars">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      <input type="hidden" name="rating" id="rating">
+      <textarea name="message" placeholder="What can we do better?" required></textarea>
+      <button type="submit">Submit My Feedback</button>
+    </form>
+  </div>
+</div>
+<script src="{{url_for('static', filename='js/feedback.js')}}"></script>
+</body>
+</html>

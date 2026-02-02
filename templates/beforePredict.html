@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Prediction - Intro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/beforePredict.css') }}">
+</head>
+<body>
+  <section class="intro-section">
+    <div class="intro-box">
+      <h1>Welcome to Career Prediction</h1>
+      <p>
+        This Career Prediction tool helps students discover the best career 
+        paths based on their <b>CGPA</b> and <b>Educational Level</b>.  
+        It provides guidance for choosing the right stream and profession 
+        according to your academic performance.
+      </p>
+      <a href="{{ url_for('prediction') }}">
+        <button>Start Prediction</button>
+      </a>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Prediction</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/Predict.css')}}">
+</head>
+<body>
+  <section class="career-section">
+    <div class="career-box">
+      <h2>Career Prediction</h2>
+      <form method="POST" action="/prediction">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="text" name="name" placeholder="Enter your name" required>
+
+        <select name="education_level" required>
+            <option value="">Select Education Level</option>
+            <option value="Undergraduate">Undergraduate</option>
+            <option value="Postgraduate">Postgraduate</option>
+            <option value="PhD">PhD</option>
+            <option value="High School">High School</option>
+        </select>
+    
+        <select name="stream" required>
+          <option>Select Stream</option>
+          <option>Computer Science</option>
+          <option>Information Technology</option>
+          <option>Data Science</option>
+          <option>Mathematics</option>
+          <option>Statistics</option>
+          <option>Mechanical Engineering</option>
+          <option>Commerce</option>
+          <option>Finance</option>
+          <option>Law</option>
+          <option>Arts</option>
+          <option>Psychology</option>
+        </select>
+
+        <input type="number" step="0.1" name="cgpa" placeholder="Enter CGPA" required>
+        <input type="text" name="skills" placeholder="Enter your skills (example: python machine learning)" required>
+
+        <select name="interest" required>
+          <option value="">Select Interest</option>
+          <option>AI</option>
+          <option>Data</option>
+          <option>Development</option>
+          <option>Cloud</option>
+          <option>Security</option>
+          <option>Finance</option>
+          <option>Design</option>
+          <option>Writing</option>
+          <option>Engineering</option>
+          <option>Law</option>
+          <option>Research</option>
+        </select>
+        <button type="submit">Predict Career</button>
+    </form>
+    </div>
+  </section>
+</body>
+</html>

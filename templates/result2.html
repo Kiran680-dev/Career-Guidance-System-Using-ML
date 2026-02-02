@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover yourself Result</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/result2.css')}}"/>
+</head>
+<body>
+  <div class="result-box2">
+    <h2>Your Ideal Career Path</h2>
+    <p class="career-title">{{ career }}</p>
+      <div class="career-desc">{{ description }}</div>
+      <div class="career-suggestion">
+        <h3>Career Suggestion</h3>
+        <p>{{ suggestion }}</p>
+      </div>
+      <h3>Recommended Learning Path</h3>
+
+      <div class="courses">
+        {% for course,link in courses %}
+
+        <a href="{{ url_for('course_page', name=link) }}" class="course-btn">
+          {{ course }}
+        </a>
+
+        {% endfor %}
+      </div>
+      <br />
+      <div class="result-actions">
+        <a href="{{ url_for('home') }}">
+          <button type="button">Back to Home</button>
+        </a>
+        <a href="{{ url_for('discover') }}">
+          <button type="button">Try Again</button>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
